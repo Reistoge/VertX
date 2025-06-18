@@ -1,5 +1,5 @@
 // Paquete donde se encuentra la clase
-package publishsubscribe;
+package cl.ucn.publishsubscribe;
 
 // Importaciones necesarias de Vert.x para crear vértices (verticles) y desplegarlos
 import io.vertx.core.AbstractVerticle;

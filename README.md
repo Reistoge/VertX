@@ -95,7 +95,7 @@ cd pointtopoint
 mvn clean compile exec:java -Dexec.mainClass=cl.ucn.pointtopoint.PointToPoint
 
 cd publishsubscribe
-mvn clean compile exec:java -Dexec.mainClass=publishsubscribe.PublishSubscribe
+mvn clean compile exec:java -Dexec.mainClass=cl.ucn.publishsubscribe.PublishSubscribe
 
 cd requestresponse
 mvn clean compile exec:java -Dexec.mainClass=requestresponse.RequestResponse
