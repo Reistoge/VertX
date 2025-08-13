@@ -38,12 +38,13 @@ public class PublishSubscribe {
         public void start(final Promise<Void> startPromise) throws Exception {
             startPromise.complete();
 
-            // Envía un mensaje cada 10 segundos a través del EventBus (método publish)
+            // Envía un mensaje cada 10 segundos a través del EventBus (metodo publish)
             // A diferencia de send, publish lo envía a todos los consumidores registrados
             vertx.setPeriodic(Duration.ofSeconds(10).toMillis(), id ->
-                    vertx.eventBus().publish(Publish.class.getName(), "Un mensaje para todos!"));
+                    vertx.eventBus().<String>publish(Publish.class.getName(), "Mensaje enviado a los suscriptores: " + id));
         }
     }
+
 
     // Primer suscriptor
     public static class Subscriber1 extends AbstractVerticle {
@@ -56,6 +57,9 @@ public class PublishSubscribe {
             vertx.eventBus().<String>consumer(Publish.class.getName(), message -> {
                 LOG.debug("Received message: " + message.body());
             });
+
+
+
         }
     }
 

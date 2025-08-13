@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class RequestResponse {
 
-    // Método main: punto de entrada del programa
+    // Metodo main: punto de entrada del programa
     public static void main(String[] args) {
         var vertx = Vertx.vertx(); // Crea una instancia de Vert.x
         vertx.deployVerticle(new RequestVerticle()); // Despliega el verticle que envía una petición
